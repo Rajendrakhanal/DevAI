@@ -1,6 +1,6 @@
 {
-  "name": "vsus",
-  "displayName": "VSUS",
+  "name": "DevAI",
+  "displayName": "DevAI",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -10,46 +10,50 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:vsus.welcome"
+    "onCommand:DevAI.welcome"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "vsus.showInfoNotification",
+        "command": "DevAI.showInfoNotification",
         "title": "Information Notification"
       },
       {
-        "command": "vsus.showWarningNotification",
+        "command": "DevAI.showWarningNotification",
         "title": "Warning Notification"
       },
       {
-        "command": "vsus.showErrorNotification",
+        "command": "DevAI.showErrorNotification",
         "title": "Error Notification"
       },
       {
-        "command": "vsus.helloWorld",
+        "command": "DevAI.helloWorld",
         "title": "Hello World"
       },
       {
-        "command": "vsus.createCProject",
+        "command": "DevAI.createCProject",
         "title": "Create Project: C"
       },
       {
-        "command": "vsus.createCPPProject",
+        "command": "DevAI.createCPPProject",
         "title": "Create Project: C++"
       },
       {
-        "command": "vsus.createReactProject",
+        "command": "DevAI.createReactProject",
         "title": "Create Project: React"
       },
       {
-        "command": "vsus.createNodeProject",
+        "command": "DevAI.createNodeProject",
         "title": "Create Project: NodeJS"
       },
       {
-        "command": "vsus.createdjangoProject",
+        "command": "DevAI.createdjangoProject",
         "title": "Create Project: django"
+      },
+      {
+        "command": "askDevAI.start",
+        "title": "AskDevAI"
       }
     ],
     "snippets": [
@@ -92,7 +96,9 @@
   },
   "dependencies": {
     "@types/fs-extra": "^11.0.0",
+    "dotenv": "^16.0.3",
     "fs-extra": "^11.1.0",
+    "openai": "^3.1.0",
     "path": "^0.12.7"
   }
 }
