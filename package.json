@@ -1,8 +1,14 @@
 {
   "name": "DevAI",
   "displayName": "DevAI",
-  "description": "",
-  "version": "0.0.1",
+  "publisher": "DevAI",
+  "description": "Feel the DevAI, Fall for DevAI ",
+  "icon": "DevAIlogo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rajendrakhanal/DevAI"
+  },
+  "version": "2.0.0",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -28,8 +34,8 @@
         "title": "Error Notification"
       },
       {
-        "command": "DevAI.helloWorld",
-        "title": "Hello World"
+        "command": "DevAI.startup",
+        "title": "DevAI"
       },
       {
         "command": "DevAI.createCProject",
@@ -64,8 +70,99 @@
       {
         "language": "cpp",
         "path": "./src/json/snippets/cpp.json"
+      },
+      {
+        "language": "csharp",
+        "path": "./src/json/snippets/csharp.json"
+      },
+      {
+        "language": "css",
+        "path": "./src/json/snippets/css.json"
+      },
+      {
+        "language": "dart",
+        "path": "./src/json/snippets/dart.json"
+      },
+      {
+        "language": "go",
+        "path": "./src/json/snippets/go.json"
+      },
+      {
+        "language": "html",
+        "path": "./src/json/snippets/html.json"
+      },
+      {
+        "language": "java",
+        "path": "./src/json/snippets/java.json"
+      },
+      {
+        "language": "julia",
+        "path": "./src/json/snippets/julia.json"
+      },
+      {
+        "language": "latex",
+        "path": "./src/json/snippets/latex.json"
+      },
+      {
+        "language": "lua",
+        "path": "./src/json/snippets/lua.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./src/json/snippets/markdown.json"
+      },
+      {
+        "language": "php",
+        "path": "./src/json/snippets/php.json"
+      },
+      {
+        "language": "r",
+        "path": "./src/json/snippets/r.json"
+      },
+      {
+        "language": "ruby",
+        "path": "./src/json/snippets/ruby.json"
+      },
+      {
+        "language": "rust",
+        "path": "./src/json/snippets/rust.json"
+      },
+      {
+        "language": "sql",
+        "path": "./src/json/snippets/sql.json"
+      },
+      {
+        "language": "swift",
+        "path": "./src/json/snippets/swift.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./src/json/snippets/javascript/javascript.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./src/json/snippets/javascript/typescript.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./src/json/snippets/javascript/react.json"
+      },
+      {
+        "language": "python",
+        "path": "./src/json/snippets/python/python.json"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "AskDevAI",
+      "type": "object",
+      "properties": {
+        "askDevAI.apiKey": {
+          "type": "string",
+          "markdownDescription": "API key from [OpenAI](https://beta.openai.com/account/api-keys)",
+          "order": 0
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",

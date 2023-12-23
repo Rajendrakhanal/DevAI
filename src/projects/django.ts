@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 
-import { Terminal } from "../utils/terminal";
+import { Terminal } from "../components/terminal";
 import { showInputBox } from "../utils/showInputBox";
 
 export namespace djangoProject {
@@ -10,23 +10,21 @@ export namespace djangoProject {
       "Enter name of your project"
     );
 
-    if (projectName !== undefined) {
+    if (projectName !== undefined && projectName.length > 0) {
       const djangoTerminal = new Terminal();
 
       djangoTerminal.toggleVisibility();
       djangoTerminal.runCommand(`cd ${destination}`);
       djangoTerminal.runCommand(`django-admin startproject ${projectName} .`);
-
-      setTimeout(
-        () =>
-          vscode.window.showInformationMessage(
-            "Django project create successfully"
-          ),
-        3000
+      
+      vscode.commands.executeCommand(
+        "DevAI.showInfoNotification",
+        "Your django project will be created shortly"
       );
     } else {
-      vscode.window.showInformationMessage(
-        "ERROR: project name. Failed to create project"
+      vscode.commands.executeCommand(
+        "DevAI.showErrorNotification",
+        "Failed to create django project"
       );
     }
   };

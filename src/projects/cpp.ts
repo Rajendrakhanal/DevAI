@@ -28,7 +28,10 @@ export namespace cppProject {
         createFile(destination, name, fileContent);
       }
     });
-
-    vscode.window.showInformationMessage("CPP project created successfully");
+    
+    vscode.commands.executeCommand(
+      "DevAI.showInfoNotification",
+      "CPP project created successfully"
+    );
   };
 }

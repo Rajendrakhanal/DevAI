@@ -1,7 +1,3 @@
-/**
- * @Ujjwal
- */
-
 import * as vscode from "vscode";
 import * as path from "path";
 
@@ -32,7 +28,10 @@ export namespace cProject {
         createFile(destination, name, fileContent);
       }
     });
-
-    vscode.window.showInformationMessage("C project created successfully");
+    
+    vscode.commands.executeCommand(
+      "DevAI.showInfoNotification",
+      "C project created successfully"
+    );
   };
 }

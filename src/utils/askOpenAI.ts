@@ -1,10 +1,13 @@
+import * as vscode from "vscode";
+import { getApiKey } from "./getApiKey";
+
 /* eslint-disable @typescript-eslint/naming-convention */
 const { Configuration, OpenAIApi } = require("openai");
 
-export async function askDevAI(question: string) {
+export async function askOpenAI(question: string | undefined) {
   try {
     const configuration = new Configuration({
-      apiKey: "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",
+      apiKey: getApiKey(),
     });
 
     const openai = new OpenAIApi(configuration);
@@ -21,5 +24,9 @@ export async function askDevAI(question: string) {
     }
   } catch (error: any) {
     console.log(error);
+    vscode.commands.executeCommand(
+      "DevAI.showErrorNotification",
+      "Some error occured while generating answer to you question."
+    );
   }
 }
