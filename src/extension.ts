@@ -3,6 +3,7 @@ import { createProject } from "./projects";
 
 import boilerplatecode from "./json/boilerplatecode.json";
 import { askDevAI } from "./utils/askDevAI";
+import { showInputBox } from "./utils/showInputBox";
 
 export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "DevAI" is now active!');
@@ -14,11 +15,8 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(
     vscode.commands.registerCommand("askDevAI.start", async () => {
-      const question = await vscode.window.showInputBox({
-        ignoreFocusOut: true,
-        placeHolder: "Enter your question...",
-        prompt: "Question",
-      });
+      const question = await showInputBox("Enter your question...", "Question");
+
       if (question !== undefined) {
         const response = await askDevAI(question);
         const panel = vscode.window.createWebviewPanel(
@@ -39,25 +37,31 @@ export function activate(context: vscode.ExtensionContext) {
   const go = getLanguageCompletion("go");
   const csharp = getLanguageCompletion("csharp");
 
-  const showInfoNotification = vscode.commands.registerCommand(
-    "DevAI.showInfoNotification",
-    () => {
-      vscode.window.showInformationMessage("Information from DevAI");
-    }
-  );
-  const showWarningNotification = vscode.commands.registerCommand(
-    "DevAI.showWarningNotification",
-    () => {
-      vscode.window.showWarningMessage("Warning from DevAI");
-    }
-  );
-  const showErrorNotification = vscode.commands.registerCommand(
-    "DevAI.showErrorNotification",
-    () => {
-      vscode.window.showErrorMessage("Error from DevAI");
-    }
-  );
+  registerProjectBoilerPlateCode(context);
+  registerNotification(context);
 
+  context.subscriptions.push(helloWorld);
+}
+
+const getLanguageCompletion = (
+  language: "c" | "cpp" | "java" | "csharp" | "go"
+): vscode.Disposable => {
+  return vscode.languages.registerCompletionItemProvider(language, {
+    provideCompletionItems() {
+      const snippetCompletion = new vscode.CompletionItem(
+        boilerplatecode[language].prefix
+      );
+
+      let body = boilerplatecode[language].body.join("");
+
+      snippetCompletion.insertText = new vscode.SnippetString(body);
+
+      return [snippetCompletion];
+    },
+  });
+};
+
+function registerProjectBoilerPlateCode(context: vscode.ExtensionContext) {
   const cProject = vscode.commands.registerCommand(
     "DevAI.createCProject",
     () => {
@@ -98,31 +102,36 @@ export function activate(context: vscode.ExtensionContext) {
     nodeProject,
     cProject,
     reactProject,
-    djangoProject,
-    helloWorld,
+    djangoProject
+  );
+}
+
+function registerNotification(context: vscode.ExtensionContext) {
+  const showInfoNotification = vscode.commands.registerCommand(
+    "DevAI.showInfoNotification",
+    () => {
+      vscode.window.showInformationMessage("Information from DevAI");
+    }
+  );
+  const showWarningNotification = vscode.commands.registerCommand(
+    "DevAI.showWarningNotification",
+    () => {
+      vscode.window.showWarningMessage("Warning from DevAI");
+    }
+  );
+  const showErrorNotification = vscode.commands.registerCommand(
+    "DevAI.showErrorNotification",
+    () => {
+      vscode.window.showErrorMessage("Error from DevAI");
+    }
+  );
+
+  context.subscriptions.push(
     showErrorNotification,
     showInfoNotification,
     showWarningNotification
   );
 }
-
-const getLanguageCompletion = (
-  language: "c" | "cpp" | "java" | "csharp" | "go"
-): vscode.Disposable => {
-  return vscode.languages.registerCompletionItemProvider(language, {
-    provideCompletionItems() {
-      const snippetCompletion = new vscode.CompletionItem(
-        boilerplatecode[language].prefix
-      );
-
-      let body = boilerplatecode[language].body.join("");
-
-      snippetCompletion.insertText = new vscode.SnippetString(body);
-
-      return [snippetCompletion];
-    },
-  });
-};
 
 export function deactivate() {}
 
