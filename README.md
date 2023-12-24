@@ -2,12 +2,9 @@
     <h1 align="center">DevAI</h1>
     <p align="center">
         <img
-             src="https://user-images.githubusercontent.com/83917129/212448818-bf08e35d-606d-4b47-a24c-782e79b4d1e9.png"
+             src="DevAIlogo.png"
              alt="Logo of DevAI"
          />
-    <p align="center">
-    <strong> Feel the DevAI, Fall for DevAI </strong>
-    </p>
 </p>
 
 <p align="center">
@@ -117,15 +114,4 @@
 
    ![create-django-project](https://user-images.githubusercontent.com/83917129/212448542-e0809ed0-c0aa-47c5-a339-ffa3843a58a9.gif)
 
-
-
-## 👨 Authors 👨
-
-💻 [Susheel Thapa](https://github.com/SusheelThapa)
-
-💻 [Rajendra Khanal](https://github.com/Rajendrakhanal)
-
-💻 [Saurav Kumar Mahato](https://github.com/SauravKumarMahato)
-
-💻 [Ujjwal Jha](https://github.com/Ujj1225)
 
