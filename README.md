@@ -2,7 +2,7 @@
     <h1 align="center">DevAI</h1>
     <p align="center">
         <img
-             src="https://github.com/Rajendrakhanal/DevAI/assets/95162952/976c6f0a-23ac-499b-a0ae-cdd133940953"
+             src="https://github.com/Rajendrakhanal/DevAI/assets/95162952/30665c17-0f2f-46e5-8bff-a0f7ff67e892"
              alt="Logo of DevAI"
          />
 </p>
