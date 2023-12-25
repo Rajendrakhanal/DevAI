@@ -2,7 +2,6 @@
   "name": "DevAI",
   "displayName": "DevAI",
   "publisher": "DevAI",
-  "description": "Feel the DevAI, Fall for DevAI ",
   "icon": "DevAIlogo.png",
   "repository": {
     "type": "git",
@@ -193,9 +192,10 @@
   },
   "dependencies": {
     "@types/fs-extra": "^11.0.0",
+    "@vscode/vsce": "^2.22.0",
     "dotenv": "^16.0.3",
     "fs-extra": "^11.1.0",
-    "openai": "^3.1.0",
+    "openai": "^4.24.1",
     "path": "^0.12.7"
   }
 }
