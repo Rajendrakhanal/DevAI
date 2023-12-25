@@ -18,12 +18,12 @@ export namespace reactProject {
       reactTerminal.runCommand(`npx create-react-app ${projectName}`);
 
       vscode.commands.executeCommand(
-        "DevAI.showInfoNotification",
+        "DevAIchatbot.showInfoNotification",
         "Your reactjs project will be created shortly"
       );
     } else {
       vscode.commands.executeCommand(
-        "DevAI.showErrorNotification",
+        "DevAIchatbot.showErrorNotification",
         "Failed to create reactjs project"
       );
     }

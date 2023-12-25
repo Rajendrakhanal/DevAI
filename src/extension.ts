@@ -2,24 +2,24 @@ import * as vscode from "vscode";
 import { createProject } from "./projects";
 
 import boilerplatecode from "./json/boilerplatecode.json";
-import { ADevAI } from "./utils/ADevAI";
+import { ADevAIchatbot } from "./utils/ADevAIchatbot";
 
 export function activate(context: vscode.ExtensionContext) {
-  console.log('Congratulations, your extension "DevAI" is now active!');
+  console.log('Congratulations, your extension "DevAIchatbot" is now active!');
 
-  let helloWorld = vscode.commands.registerCommand("DevAI.startup", () => {
+  let helloWorld = vscode.commands.registerCommand("DevAIchatbot.startup", () => {
     vscode.commands.executeCommand(
-      "DevAI.showInfoNotification",
-      "Welcome to DevAI!"
+      "DevAIchatbot.showInfoNotification",
+      "Welcome to DevAIchatbot!"
     );
   });
 
   context.subscriptions.push(
-    vscode.commands.registerCommand("askDevAI.start", async () => {
-      const aDevAI = new ADevAI();
+    vscode.commands.registerCommand("askDevAIchatbot.start", async () => {
+      const aDevAIchatbot = new ADevAIchatbot();
 
-      await aDevAI.askQuestion();
-      aDevAI.showWebView();
+      await aDevAIchatbot.askQuestion();
+      aDevAIchatbot.showWebView();
     })
   );
 
@@ -40,35 +40,35 @@ function registerLanguageCompletion() {
 
 function registerProjectBoilerPlateCode(context: vscode.ExtensionContext) {
   const cProject = vscode.commands.registerCommand(
-    "DevAI.createCProject",
+    "DevAIchatbot.createCProject",
     () => {
       createProject("c");
     }
   );
 
   const cppProject = vscode.commands.registerCommand(
-    "DevAI.createCPPProject",
+    "DevAIchatbot.createCPPProject",
     () => {
       createProject("cpp");
     }
   );
 
   const reactProject = vscode.commands.registerCommand(
-    "DevAI.createReactProject",
+    "DevAIchatbot.createReactProject",
     () => {
       createProject("react");
     }
   );
 
   const djangoProject = vscode.commands.registerCommand(
-    "DevAI.createdjangoProject",
+    "DevAIchatbot.createdjangoProject",
     () => {
       createProject("django");
     }
   );
 
   const nodeProject = vscode.commands.registerCommand(
-    "DevAI.createNodeProject",
+    "DevAIchatbot.createNodeProject",
     () => {
       createProject("node");
     }
@@ -85,19 +85,19 @@ function registerProjectBoilerPlateCode(context: vscode.ExtensionContext) {
 
 function registerNotification(context: vscode.ExtensionContext) {
   const showInfoNotification = vscode.commands.registerCommand(
-    "DevAI.showInfoNotification",
+    "DevAIchatbot.showInfoNotification",
     (message) => {
       vscode.window.showInformationMessage(message);
     }
   );
   const showWarningNotification = vscode.commands.registerCommand(
-    "DevAI.showWarningNotification",
+    "DevAIchatbot.showWarningNotification",
     (message) => {
       vscode.window.showWarningMessage(message);
     }
   );
   const showErrorNotification = vscode.commands.registerCommand(
-    "DevAI.showErrorNotification",
+    "DevAIchatbot.showErrorNotification",
     (message) => {
       vscode.window.showErrorMessage(message);
     }

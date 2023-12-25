@@ -36,7 +36,7 @@ export namespace nodeProject {
     terminal.sendText(`npm i express dotenv morgan nodemon mongoose`);
 
     vscode.commands.executeCommand(
-      "DevAI.showInfoNotification",
+      "DevAIchatbot.showInfoNotification",
       "Node project created successfully"
     );
   };

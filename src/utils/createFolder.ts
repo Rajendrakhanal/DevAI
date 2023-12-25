@@ -9,7 +9,7 @@ export function createFolder(location: string, folderName: string): void {
     console.log(error);
 
     vscode.commands.executeCommand(
-      "DevAI.showErrorNotification",
+      "DevAIchatbot.showErrorNotification",
       "Some error occured while creating folder."
     );
   }

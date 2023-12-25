@@ -1,11 +1,11 @@
 {
-  "name": "DevAI",
-  "displayName": "DevAI",
-  "publisher": "DevAI",
-  "icon": "DevAIlogo.png",
+  "name": "DevAIchatbotchatbot",
+  "displayName": "DevAIchatbot",
+  "publisher": "Rajendrakhanal",
+  "icon": "DevAIchatbotlogo.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Rajendrakhanal/DevAI"
+    "url": "https://github.com/Rajendrakhanal/DevAIchatbot"
   },
   "version": "1.0.0",
   "engines": {
@@ -15,50 +15,50 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:DevAI.welcome"
+    "onCommand:DevAIchatbot.welcome"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "DevAI.showInfoNotification",
+        "command": "DevAIchatbot.showInfoNotification",
         "title": "Information Notification"
       },
       {
-        "command": "DevAI.showWarningNotification",
+        "command": "DevAIchatbot.showWarningNotification",
         "title": "Warning Notification"
       },
       {
-        "command": "DevAI.showErrorNotification",
+        "command": "DevAIchatbot.showErrorNotification",
         "title": "Error Notification"
       },
       {
-        "command": "DevAI.startup",
-        "title": "DevAI"
+        "command": "DevAIchatbot.startup",
+        "title": "DevAIchatbot"
       },
       {
-        "command": "DevAI.createCProject",
+        "command": "DevAIchatbot.createCProject",
         "title": "Create Project: C"
       },
       {
-        "command": "DevAI.createCPPProject",
+        "command": "DevAIchatbot.createCPPProject",
         "title": "Create Project: C++"
       },
       {
-        "command": "DevAI.createReactProject",
+        "command": "DevAIchatbot.createReactProject",
         "title": "Create Project: React"
       },
       {
-        "command": "DevAI.createNodeProject",
+        "command": "DevAIchatbot.createNodeProject",
         "title": "Create Project: NodeJS"
       },
       {
-        "command": "DevAI.createdjangoProject",
+        "command": "DevAIchatbot.createdjangoProject",
         "title": "Create Project: django"
       },
       {
-        "command": "askDevAI.start",
-        "title": "AskDevAI"
+        "command": "askDevAIchatbot.start",
+        "title": "AskDevAIchatbot"
       }
     ],
     "snippets": [
@@ -152,10 +152,10 @@
       }
     ],
     "configuration": {
-      "title": "AskDevAI",
+      "title": "AskDevAIchatbot",
       "type": "object",
       "properties": {
-        "askDevAI.apiKey": {
+        "askDevAIchatbot.apiKey": {
           "type": "string",
           "markdownDescription": "API key from [OpenAI](https://beta.openai.com/account/api-keys)",
           "order": 0

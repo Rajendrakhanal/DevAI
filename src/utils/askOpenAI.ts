@@ -25,7 +25,7 @@ export async function askOpenAI(question: string | undefined) {
   } catch (error: any) {
     console.log(error);
     vscode.commands.executeCommand(
-      "DevAI.showErrorNotification",
+      "DevAIchatbot.showErrorNotification",
       "Some error occured while generating answer to you question."
     );
   }

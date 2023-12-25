@@ -18,12 +18,12 @@ export namespace djangoProject {
       djangoTerminal.runCommand(`django-admin startproject ${projectName} .`);
       
       vscode.commands.executeCommand(
-        "DevAI.showInfoNotification",
+        "DevAIchatbot.showInfoNotification",
         "Your django project will be created shortly"
       );
     } else {
       vscode.commands.executeCommand(
-        "DevAI.showErrorNotification",
+        "DevAIchatbot.showErrorNotification",
         "Failed to create django project"
       );
     }

@@ -1,16 +1,16 @@
 import * as vscode from "vscode";
 
 import { WebViewPanel } from "../components/abstract/webViewPanel";
-import { askOpenAI } from "../utils/askOpenAI";
+import { askOpenAI } from "./askOpenAI";
 import { showInputBox } from "./showInputBox";
 
-export class ADevAI extends WebViewPanel {
+export class ADevAIchatbot extends WebViewPanel {
   viewPanelHTML: string;
   private question: string | undefined;
   private answer: string | undefined;
 
   public constructor() {
-    super("Ask DevAI", "AskDevAI");
+    super("Ask DevAIchatbot", "AskDevAIchatbot");
     this.viewPanelHTML = this.getWebviewContent("", "");
   }
 
@@ -28,7 +28,7 @@ export class ADevAI extends WebViewPanel {
       this.answer = "Invalid Question";
 
       vscode.commands.executeCommand(
-        "DevAI.showErrorNotification",
+        "DevAIchatbot.showErrorNotification",
         "Invalid question"
       );
     } else {
@@ -63,7 +63,7 @@ export class ADevAI extends WebViewPanel {
         background-color:  #2D2B55;
     }
     
-    #DevAI {
+    #DevAIchatbot {
       margin: 20px 10px;
       padding: 16px;
       min-height: 100vh;
@@ -71,7 +71,7 @@ export class ADevAI extends WebViewPanel {
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     
     }
-    .DevAI_div{
+    .DevAIchatbot_div{
         background-color: #1a1b21;
        
         padding: 1.5rem;
@@ -107,8 +107,8 @@ export class ADevAI extends WebViewPanel {
     </head>
     
     <body>
-    <div id="DevAI">
-    <div class="DevAI_div">
+    <div id="DevAIchatbot">
+    <div class="DevAIchatbot_div">
     <div id="question">${question}
     </div>
     <div id="answer">

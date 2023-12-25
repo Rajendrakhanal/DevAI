@@ -30,7 +30,7 @@ export namespace cProject {
     });
     
     vscode.commands.executeCommand(
-      "DevAI.showInfoNotification",
+      "DevAIchatbot.showInfoNotification",
       "C project created successfully"
     );
   };

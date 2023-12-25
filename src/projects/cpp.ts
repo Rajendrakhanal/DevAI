@@ -30,7 +30,7 @@ export namespace cppProject {
     });
     
     vscode.commands.executeCommand(
-      "DevAI.showInfoNotification",
+      "DevAIchatbot.showInfoNotification",
       "CPP project created successfully"
     );
   };

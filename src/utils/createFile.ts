@@ -13,7 +13,7 @@ export function createFile(
     console.log(error);
 
     vscode.commands.executeCommand(
-      "DevAI.showErrorNotification",
+      "DevAIchatbot.showErrorNotification",
       "Some error occured while creating file."
     );
   }
